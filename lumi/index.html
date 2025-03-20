@@ -48,7 +48,7 @@
                 </ul>
             </nav>
 
-            <div>
+            <div class="flex-align-center">
                 <a href="#search" class="header__nav-link">
                     <img src="assets/images/icons/ico-search.svg" alt="Search Icon" height="20" width="20" />
                 </a>
@@ -58,12 +58,13 @@
                 <a href="#cart" class="header__nav-link">
                     <img src="assets/images/icons/ico-globe-lang.svg" alt="Search Icon" height="20" width="20" />
                 </a>
-                <a href="#contact" class="header__nav-link header__nav-link--button">
+
+                <div class="general__btn general__btn--contact ">
+                    Liên hệ
                     <span>
-                        Liên hệ
                         <img src="assets/images/icons/arr-up-right.svg" alt="Search Icon" height="20" width="20" />
                     </span>
-                </a>
+                </div>
             </div>
         </div>
     </header>
@@ -177,7 +178,7 @@
                 </div>
 
                 <div class="introduction__right">
-                    <div class="section-title">
+                    <div class="section-title flex-align-center">
                         <img src="assets/images/icons/ico-green-pin.svg" alt="" height="20" width="20">
                         bắt đầu với lumi
                     </div>
@@ -206,8 +207,7 @@
                                 <p>
                                     Tiện nghi và tự động hoá
                                 </p>
-                                <img src="assets/images/icons/caret-up.svg" alt="" height="20" width="20"
-                                    class="benefits__caret">
+                                <img src="assets/images/icons/caret-up.svg" alt="" height="20" width="20">
                             </div>
                             <div class="benefits__content">
                                 Mô hình nhà thông minh Lumi cho phép chủ nhà thiết lập để các thiết bị nhà thông minh tự
@@ -220,7 +220,7 @@
                             </div>
                         </div>
                         <div class="benefits__item">
-                            <div class="benefits__head">
+                            <div class="benefits__head flex-align-center">
                                 <span>
                                     <img src="assets/images/icons/ico-light-bulb.svg" alt="" height="20" width="20">
                                 </span>
@@ -237,7 +237,7 @@
                             </div>
                         </div>
                         <div class="benefits__item">
-                            <div class="benefits__head">
+                            <div class="benefits__head flex-align-center">
                                 <span>
                                     <img src="assets/images/icons/ico-shield.svg" alt="" height="20" width="20">
                                 </span>
@@ -260,38 +260,67 @@
         </section>
 
         <section class="solutions">
-            <div class="solutions__header">
-                <div class="section-title">
-                    <img src="assets/images/icons/ico-green-pin.svg" alt="" height="20" width="20">
-                    lumi cung cấp
-                </div>
-                Giải pháp nhà thông minh
-            </div>
-            <div class="solutions__container">
-                <div class="solutions__card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png"
-                        alt="Giải pháp chiếu sáng" height="200" width="300" loading="lazy" />
-                    <h3 class="solutions__card-title">Chiếu sáng thông minh</h3>
-                    <p class="solutions__card-description">Tối ưu hóa ánh sáng cho mọi không gian sống. Lorem ipsum
-                        dolor sit amet.</p>
-                </div>
-                <div class="solutions__card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png"
-                        alt="Điều hòa thông minh" height="200" width="300" loading="lazy" />
-                    <h3 class="solutions__card-title">Điều hòa thông minh</h3>
-                    <p class="solutions__card-description">Kiểm soát nhiệt độ từ xa một cách dễ dàng. Lorem ipsum dolor
-                        sit amet.</p>
-                </div>
-                <div class="solutions__card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png"
-                        alt="Bảo mật thông minh" height="200" width="300" loading="lazy" />
-                    <h3 class="solutions__card-title">Bảo mật thông minh</h3>
-                    <p class="solutions__card-description">Bảo vệ ngôi nhà của bạn 24/7. Lorem ipsum dolor sit amet.</p>
+            <div class="solutions__ctn">
+                <div class="solutions__title flex-align-center">
+                    <div class="section-title flex-align-center">
+                        <img src="assets/images/icons/ico-green-pin.svg" alt="" height="20" width="20">
+                        lumi cung cấp
+                    </div>
+                    Giải pháp nhà thông minh
                 </div>
 
-                <div class="solutions__button">
+                <div class="solutions__content">
+                    <a class="solutions__card" href="#">
+                        <img src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng" height="200" width="300"
+                            loading="lazy" />
+                        <h3 class="solutions__card-title">Chiếu sáng thông minh</h3>
+                        <p class="solutions__card-description">Tối ưu hóa ánh sáng cho mọi không gian sống. Lorem ipsum
+                            dolor sit amet.</p>
+                    </a>
+                    <a class="solutions__card" href="#">
+                        <img src="assets/images/img-solution.jpg" alt="Điều hòa thông minh" height="200" width="300"
+                            loading="lazy" />
+                        <h3 class="solutions__card-title">Điều hòa thông minh</h3>
+                        <p class="solutions__card-description">Kiểm soát nhiệt độ từ xa một cách dễ dàng. Lorem ipsum
+                            dolor
+                            sit amet.</p>
+                    </a>
+                    <a class="solutions__card" href="#">
+                        <img src="assets/images/img-solution.jpg" alt="Bảo mật thông minh" height="200" width="300"
+                            loading="lazy" />
+                        <h3 class="solutions__card-title">Bảo mật thông minh</h3>
+                        <p class="solutions__card-description">Bảo vệ ngôi nhà của bạn 24/7. Lorem ipsum dolor sit amet.
+                        </p>
+                    </a>
+                    <a class="solutions__card" href="#">
+                        <img src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng" height="200" width="300"
+                            loading="lazy" />
+                        <h3 class="solutions__card-title">Chiếu sáng thông minh</h3>
+                        <p class="solutions__card-description">Tối ưu hóa ánh sáng cho mọi không gian sống. Lorem ipsum
+                            dolor sit amet.</p>
+                    </a>
+                    <a class="solutions__card" href="#">
+                        <img src="assets/images/img-solution.jpg" alt="Điều hòa thông minh" height="200" width="300"
+                            loading="lazy" />
+                        <h3 class="solutions__card-title">Điều hòa thông minh</h3>
+                        <p class="solutions__card-description">Kiểm soát nhiệt độ từ xa một cách dễ dàng. Lorem ipsum
+                            dolor
+                            sit amet.</p>
+                    </a>
+                    <a class="solutions__card" href="#">
+                        <img src="assets/images/img-solution.jpg" alt="Bảo mật thông minh" height="200" width="300"
+                            loading="lazy" />
+                        <h3 class="solutions__card-title">Bảo mật thông minh</h3>
+                        <p class="solutions__card-description">Bảo vệ ngôi nhà của bạn 24/7. Lorem ipsum dolor sit amet.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="general__btn general__btn--center">
                     Xem tất cả giải pháp
-                    <span><img src="assets/images/icons/arr-down-green.svg" alt="" height="20" width="20"></span>
+                    <span>
+                        <img src="assets/images/icons/arr-down-green.svg" alt="" height="20" width="20">
+                    </span>
                 </div>
             </div>
         </section>
