@@ -123,8 +123,8 @@
 
             <div class="stats__content">
                 <div class="stats__item flex-align-center">
-                    <div class="stats__number">
-                        30.000<span>+</span>
+                    <div class="stats__number" data-target="30000">
+                        0
                     </div>
                     <div class="stats__header">
                         Dự án hoàn thành
@@ -134,8 +134,8 @@
                     </div>
                 </div>
                 <div class="stats__item">
-                    <div class="stats__number">
-                        12<span>+</span>
+                    <div class="stats__number" data-target="12">
+                        0
                     </div>
                     <div class="stats__header">
                         Năm kinh nghiệm
@@ -145,8 +145,8 @@
                     </div>
                 </div>
                 <div class="stats__item">
-                    <div class="stats__number">
-                        80.000<span>+</span>
+                    <div class="stats__number" data-target="80000">
+                        0
                     </div>
                     <div class="stats__header">
                         Khách hàng thân thiết
@@ -781,7 +781,6 @@
             <div class="partners__content">
                 <div class="partners__slides">
                     <img src="assets/images/logo-panasonic.svg" alt="" height="20" width="20">
-                    <img src="assets/images/.svg" alt="" height="20" width="20">
                     <img src="assets/images/logo-panasonic.svg" alt="" height="20" width="20">
                     <img src="assets/images/logo-panasonic.svg" alt="" height="20" width="20">
                     <img src="assets/images/logo-panasonic.svg" alt="" height="20" width="20">
@@ -1180,6 +1179,42 @@
             </div>
         </div>
     </footer>
+
+
+
+
+
+    <script>
+        const animateNumber = (element, target) => {
+            let start = 0;
+            const duration = 2000;
+            const increment = target / (duration / (1000 / 60));
+
+            const updateNumber = () => {
+                start += increment;
+                element.textContent = (start >= target ? Math.floor(target) : Math.floor(start)).toLocaleString() + '+';
+                if (start < target) requestAnimationFrame(updateNumber);
+            };
+
+            updateNumber();
+        };
+
+        const numberObserver = new IntersectionObserver(entries => {
+            const numbers = document.querySelectorAll('.stats__number');
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    numbers.forEach(number => {
+                        setTimeout(() => animateNumber(number, parseInt(number.getAttribute('data-target'))), 0);
+                    });
+                } else {
+                    numbers.forEach(number => number.textContent = '0');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        numberObserver.observe(document.querySelector('.stats__content'));
+    </script>
+
 </body>
 
 </html>
