@@ -1314,6 +1314,64 @@
             });
         });
     </script>
+
+    <!-- Projects parallax -->
+    <script>
+        const projects = document.querySelectorAll('.projects__item');
+        const totalItems = projects.length;
+
+        const projectsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                projects.forEach(item => {
+                    item.style.position = entry.isIntersecting ? 'sticky' : 'static';
+                    if (!entry.isIntersecting) {
+                        item.style.opacity = 1;
+                        item.style.transform = 'scale(1)';
+                        item.style.boxShadow = 'none';
+                        item.style.height = '400px'; // Reset height
+                        item.style.top = `${80 + (Array.from(projects).indexOf(item) * 20)}px`; // Reset top
+                    }
+                });
+            });
+        }, { threshold: 0 });
+
+        const projectObserver = new IntersectionObserver(entries => {
+            let topmostIndex = -1;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = Array.from(projects).indexOf(entry.target);
+                    topmostIndex = Math.max(topmostIndex, idx);
+                }
+            });
+
+            projects.forEach((item, i) => {
+                if (topmostIndex === -1 || i >= topmostIndex) {
+                    item.style.opacity = 1;
+                    item.style.transform = 'scale(1)';
+
+                    // Special handling for the last item
+                    if (i === totalItems - 1 && i === topmostIndex) {
+                        item.style.height = `${400 + (totalItems - 1) * 20}px`; // Cover all previous items
+                        item.style.top = '80px'; // Align with the first item's top
+                        item.style.zIndex = totalItems + 1; // Ensure it’s on top
+                    } else {
+                        item.style.height = '400px'; // Default height
+                        item.style.top = `${80 + (i * 20)}px`; // Default staggered top
+                    }
+                } else {
+                    const scale = 1 - (topmostIndex - i) * 0.05;
+                    const opacity = 1 - (topmostIndex - i) * 0.2;
+                    item.style.transform = `scale(${scale})`;
+                    item.style.opacity = opacity;
+                    item.style.height = '400px';
+                    item.style.top = `${80 + (i * 20)}px`;
+                }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+
+        projectsObserver.observe(document.querySelector('.projects__content'));
+        projects.forEach(item => projectObserver.observe(item));
+    </script>
 </body>
 
 </html>

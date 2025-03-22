@@ -652,6 +652,7 @@ section {
 .projects__content {
     margin-bottom: 48px;
     margin-top: 40px;
+
 }
 
 .projects__item {
@@ -663,6 +664,24 @@ section {
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 64px;
+    position: sticky;
+    top: 100px;
+    transition: all 0.3s;
+}
+
+.projects__item:nth-of-type(1) {
+    z-index: 1;
+    top: 108px;
+}
+
+.projects__item:nth-of-type(2) {
+    z-index: 2;
+    top: 138px;
+}
+
+.projects__item:nth-of-type(3) {
+    z-index: 3;
+    top: 158px;
 }
 
 .projects__item:last-of-type {
