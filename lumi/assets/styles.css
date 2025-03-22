@@ -1047,59 +1047,372 @@ section[class="hero"] {
 
 /* #endregion */
 
-/* #region Partner Section */
+/* #region Partners Section */
+.partners {
+    padding: 0 0 0 0;
+    margin: 88px auto;
+}
+
+.partners__ctn {
+    padding: 0 64px;
+}
+
+.partners__content {
+    margin-top: 40px;
+}
+
+.partners__slides {
+    height: 120px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    justify-content: start;
+    align-items: start;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.partners__slides::-webkit-scrollbar {
+    display: none;
+}
+
+.partners__slides {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.partners__slides img {
+    height: 120px;
+    width: auto;
+    aspect-ratio: auto;
+    margin-right: 64px;
+}
+
+.partners__slides img:last-of-type {
+    margin-right: 0;
+}
+
 /* #endregion */
 
 /* #region Choice Section */
+.choice {
+    margin: 88px 0;
+}
+
+.choice__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.choice__items {
+    margin-top: 40px;
+}
+
+.choice__item {
+    border-radius: 16px;
+    background: #F5F5F5;
+    padding: 24px;
+}
+
+.choice__item>img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 32px;
+}
+
+.choice__name {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-bottom: 16px;
+}
+
+.choice__name img {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+
+.choice__desc {
+    color: #7F7F80;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 /* #endregion */
 
 /* #region Blogs Section */
+.blogs {
+    background-color: #f5f5f5;
+    padding: 0 0 0 0 !important;
+}
+
+.blogs__ctn {
+    padding: 88px 64px;
+}
+
+.blogs__title {
+    position: relative;
+}
+
+.blogs__categories {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: end;
+}
+
+.blogs__category {
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #7F7F80;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.blogs__category:last-of-type {
+    margin-right: 0;
+}
+
+.blogs__category:hover {
+    opacity: 0.8;
+}
+
+.blogs__category.selected {
+    color: #fff;
+    background-color: #008C4F;
+}
+
+.blogs__list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.blogs__item {
+    border-radius: 16px;
+    background: #FFF;
+    padding: 24px;
+}
+
+.blogs__item>img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.blogs__info {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
+
+.blogs__tag {
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #008C4F;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 12px;
+}
+
+.blogs__date {
+    color: #7F7F80;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 12px;
+    margin-right: 8px;
+}
+
+.blogs__length {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    color: #7F7F80;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.blogs__length img {
+    height: 24px;
+    width: 24px;
+    margin-right: 4px;
+}
+
+.blogs__name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.blogs__desc {
+    color: #7F7F80;
+    font-size: 16px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 24px;
+}
+
+.blogs__view {
+    color: #008C4F;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline !important;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.blogs__view:hover {
+    opacity: 0.8;
+}
+
+.blogs__view img {
+    margin-left: 12px;
+    height: 24px;
+    width: 24px;
+}
+
 /* #endregion */
 
-/* #region QA Section */
+/* #region Q&A Section */
+.qanda {
+    margin: 88px 0;
+}
+
+.qanda__ctn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.qanda__title {}
+
+.qanda__list {}
+
+.qanda__item {
+    margin-top: 16px;
+}
+
+.qanda__item:first-of-type {
+    margin-top: 0;
+}
+
+.qanda__item input {
+    display: none;
+}
+
+.qanda__question {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    border-radius: 16px;
+    background: #F5F5F5;
+}
+
+.qanda__answer {
+    color: #7F7F80;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 24px 0 24px 24px;
+    display: none;
+}
+
+.qanda__item.active .qanda__answer {
+    display: block;
+}
+
+.qanda__button {
+    width: 44px;
+    height: 44px;
+    background-color: #008C4F;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.qanda__button::before,
+.qanda__button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+/* Vertical line (rotated from horizontal) */
+.qanda__button::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Active state — rotate to create 'X' */
+.qanda__item.active .qanda__button {
+    background-color: #fff;
+    /* Optional: change color when active */
+}
+
+/* Rotate lines to form an 'X' */
+.qanda__item.active .qanda__button::before {
+    background-color: #008C4F;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.qanda__item.active .qanda__button::after {
+    background-color: #008C4F;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 /* #endregion */
 
 /* #region Footer */
+
 /* #endregion */
-
-.head-lg-bold {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 135%;
-    letter-spacing: 0%;
-    color: #090909;
-}
-
-.head-xl-bold {
-    font-weight: 700;
-    font-size: 49px;
-    line-height: 135%;
-    letter-spacing: 0%;
-    color: #090909;
-}
-
-.head-sm-bold {
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 135%;
-    letter-spacing: 0%;
-    color: #090909;
-}
-
-.head-sm-bold {
-    font-family: Inter;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 135%;
-    letter-spacing: 0%;
-    color: #090909;
-}
-
-.txt {
-    font-family: Inter;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 135%;
-    letter-spacing: 0%;
-    color: #090909;
-}
