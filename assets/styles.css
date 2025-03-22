@@ -2,9 +2,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', Segoe UI, Arial, Helvetica, Verdana, sans-serif;
+    font-family: 'Inter', Segoe UI, Arial, Helvetica, Verdana, sans-serif;
     scroll-behavior: smooth;
-    /* user-select: none !important; */
 }
 
 *:focus {
@@ -12,7 +11,6 @@
 }
 
 body {
-
     width: 100vw;
     overflow-x: hidden;
     position: relative;
@@ -21,7 +19,7 @@ body {
 
 a {
     color: unset;
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 .flex-align-center {
@@ -39,14 +37,6 @@ a {
     text-align: center;
 }
 
-.absolute-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .txt-line-limit {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -55,61 +45,6 @@ a {
     -webkit-line-clamp: 2;
 }
 
-.gap-box-6,
-.gap-reg-8,
-.gap-reg-10,
-.gap-reg-12,
-.gap-reg-16,
-.gap-reg-20,
-.gap-reg-30,
-.gap-reg-40,
-.gap-reg-50,
-.gap-reg-box {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.gap-reg-6 {
-    height: 6px;
-}
-
-.gap-reg-8 {
-    height: 8px;
-}
-
-.gap-reg-10 {
-    height: 10px;
-}
-
-.gap-reg-12 {
-    height: 12px;
-}
-
-.gap-reg-16 {
-    height: 16px;
-}
-
-.gap-reg-20 {
-    height: 20px;
-}
-
-.gap-reg-30 {
-    height: 30px;
-}
-
-.gap-reg-40 {
-    height: 40px;
-}
-
-.gap-reg-50 {
-    height: 50px;
-}
-
-
-/* #endregion */
-
-/* #region Section */
 section {
     margin: 0 auto;
     padding: 0 64px;
@@ -412,6 +347,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-top: 16px;
 }
 
 .stats__item {
@@ -1745,7 +1681,6 @@ section {
 }
 
 /* #endregion */
-
 
 /* #region Fade-in */
 /* CSS */
