@@ -52,13 +52,13 @@
             </nav>
 
             <div class="flex-align-center">
-                <a href="#search" class="header__nav-link">
+                <a href="#search" class="header__action">
                     <img src="assets/images/icons/ico-search.svg" alt="Search Icon" height="20" width="20" />
                 </a>
-                <a href="#cart" class="header__nav-link">
+                <a href="#cart" class="header__action">
                     <img src="assets/images/icons/ico-cart.svg" alt="Search Icon" height="20" width="20" />
                 </a>
-                <a href="#cart" class="header__nav-link">
+                <a href="#cart" class="header__action">
                     <img src="assets/images/icons/ico-globe-lang.svg" alt="Search Icon" height="20" width="20" />
                 </a>
 
@@ -85,9 +85,9 @@
                             loading="lazy" class="hero__image" />
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
+                <!-- <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div> -->
             </div>
         </section>
 
@@ -202,7 +202,7 @@
                     </div>
 
                     <div class="benefits">
-                        <div class="benefits__item">
+                        <div class="benefits__item active" onclick="toggleBenefitContent(this)">
                             <div class="benefits__head flex-align-center">
                                 <span>
                                     <img src="assets/images/icons/ico-broadcast.svg" alt="" height="20" width="20">
@@ -222,7 +222,7 @@
                                 smart home Lumi luôn mang đến tiện nghi tuyệt đối cho mỗi gia đình
                             </div>
                         </div>
-                        <div class="benefits__item">
+                        <div class="benefits__item active" onclick="toggleBenefitContent(this)">
                             <div class="benefits__head flex-align-center">
                                 <span>
                                     <img src="assets/images/icons/ico-light-bulb.svg" alt="" height="20" width="20">
@@ -239,7 +239,7 @@
                                 chỉnh nhiệt độ phù hợp.
                             </div>
                         </div>
-                        <div class="benefits__item">
+                        <div class="benefits__item active" onclick="toggleBenefitContent(this)">
                             <div class="benefits__head flex-align-center">
                                 <span>
                                     <img src="assets/images/icons/ico-shield.svg" alt="" height="20" width="20">
@@ -257,6 +257,13 @@
                                 mình.
                             </div>
                         </div>
+
+                        <script>
+                            function toggleBenefitContent(item) {
+                                item.classList.toggle('active');
+                                console.log("aaa")
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
@@ -1068,12 +1075,110 @@
         </section>
     </main>
 
-    <style>
-
-    </style>
-
     <footer class="footer">
+        <div class="footer__ctn">
+            <div class="footer__top">
+                <img src="assets/images/logo.svg" alt="logo" height="56" width="204">
 
+                <div class="footer__message">
+                    Chúng tôi là công ty chuyên sản xuất và cung cấp thiết bị và giải pháp nhà
+                    thông minh, chiếu sáng thông minh, nâng cao trải nghiệm sống tiện nghi, an toàn cho mọi gia đình.
+                </div>
+            </div>
+            <div class="footer__middle">
+                <div class="footer__contact">
+                    <div class="footer__title">Liên hệ</div>
+                    <div class="footer__region">
+                        <div class="footer__region-name">Miền Bắc:</div>
+                        <div class="footer__location">
+                            <img src="assets/images/icons/ico-location.svg" height="20" width="20" alt="location">
+                            Số 38, Đỗ Đức Dục, phường Mễ Trì, quận Nam Từ Liêm, thành phố Hà Nội
+                        </div>
+                        <div class="footer__phone">
+                            <img src="assets/images/icons/ico-phone.svg" height="20" width="20" alt="phone">
+                            SĐT: <a href="tel:0904 665 965">0904 665 965</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__group">
+                    <div class="footer__title">Lumi</div>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                </div>
+                <div class="footer__group">
+                    <div class="footer__title">Lumi</div>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                </div>
+                <div class="footer__group">
+                    <div class="footer__title">Lumi</div>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                </div>
+                <div class="footer__group">
+                    <div class="footer__title">Lumi</div>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                    <a class="footer__link" href="#">Trang chủ</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">Copyright © 2025 Lumi Smart Home. All rights reserved.</div>
+                <div class="footer__langs">
+                    <img src="assets/images/icons/ico-globe-lang.svg" height="" width="" alt="">
+                    Tiếng Việt
+                </div>
+                <div class="footer__social">
+                    <a href="#">
+                        <img src="assets/images/icons/ico-facebook.svg" height="28" width="28" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="assets/images/icons/ico-instagram.svg" height="28" width="28" alt="instagram">
+                    </a>
+                    <a href="#">
+                        <img src="assets/images/icons/ico-youtube.svg" height="28" width="28" alt="youtube">
+                    </a>
+                    <a href="#">
+                        <img src="assets/images/icons/ico-pinterest.svg" height="28" width="28" alt="pinterest">
+                    </a>
+                </div>
+                <div class="footer__apps">
+                    <a href="#">
+                        <img src="assets/images/icons/ico-app-store.svg" height="30" width="102" alt="appstore">
+                    </a>
+                    <a href="#">
+                        <img src="assets/images/icons/ico-google-play.svg" height="30" width="102" alt="chplay">
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 
