@@ -1559,7 +1559,16 @@ section {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    border-bottom: 1px solid #7F7F80;
+}
+
+.footer__top::after {
+    content: "";
+    position: absolute;
+    left: 64px;
+    bottom: 0;
+    width: calc(100% - 128px);
+    height: 1px;
+    background-color: #7F7F80;
 }
 
 .footer__top img {
