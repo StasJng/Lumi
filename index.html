@@ -1410,11 +1410,11 @@
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
+                    img.removeAttribute('lazy');
                     observer.unobserve(img);
                 }
             });
         }, {
-            rootMargin: '0px 0px 200px 0px', // Load images 200px before entering viewport
             threshold: 0.01 // Trigger when 1% of the image is visible
         });
 
