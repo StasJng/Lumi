@@ -482,6 +482,10 @@ section[class="hero"] {
     display: block;
 }
 
+.benefits__item.active .benefits__head>img {
+    rotate: 0deg;
+}
+
 .benefits__head {
     padding: 8px;
     font-size: 18px;
@@ -496,6 +500,7 @@ section[class="hero"] {
     width: 24px;
     position: absolute;
     right: 8px;
+    rotate: -180deg;
 }
 
 .benefits__head span {
