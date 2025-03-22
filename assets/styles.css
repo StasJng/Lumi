@@ -219,6 +219,7 @@ section {
     display: flex;
     align-items: center;
     vertical-align: middle;
+    width: fit-content;
 }
 
 .section__sub-title img {
