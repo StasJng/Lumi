@@ -932,6 +932,15 @@ section[class="hero"] {
     overflow-x: scroll;
 }
 
+.reviews__list::-webkit-scrollbar {
+    display: none;
+}
+
+.reviews__list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .reviews__item {
     border-radius: 16px;
     width: 440px;
