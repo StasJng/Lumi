@@ -1,18 +1,16 @@
-let heroSwiper = new Swiper('.hero .swiper-container',
-    {
+document.addEventListener('DOMContentLoaded', () => {
+    let heroSwiper = new Swiper('.hero .swiper-container', {
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: !1,
-        pagination:
-        {
+        loop: true,
+        autoHeight: true,
+        pagination: {
             el: '.hero .swiper-pagination',
-            clickable: !1,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            clickable: true
         }
-    })
+    });
+});
+
 
 // let categorySwiper = new Swiper('.category-reg .swiper-container',
 //     {
