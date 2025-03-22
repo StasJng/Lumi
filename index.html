@@ -1411,6 +1411,7 @@
                     const img = entry.target;
                     img.src = img.dataset.src;
                     img.removeAttribute('lazy');
+                    img.removeAttribute('data-src');
                     observer.unobserve(img);
                 }
             });
