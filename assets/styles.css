@@ -164,45 +164,40 @@ section {
     width: calc(100% - 8px);
 }
 
-.general__btn:hover span img {
-    animation: space-gate 0.35s ease-in-out;
+.general__btn:hover span img,
+.general__btn:hover p {
+    animation: scroll-inertia 0.2s ease-out;
 }
 
 /* Keyframe animation to "flicker" the image */
-@keyframes space-gate {
+@keyframes scroll-inertia {
     0% {
-        opacity: 1;
-        transform: translate(0, 0);
-        width: 0;
-        height: 0;
+        transform: translateY(0);
+        height: 20px;
     }
 
     25% {
-        opacity: 0.8;
-        width: 10px;
+        transform: translateY(-10px);
+        opacity: 0.5;
         height: 10px;
-        transform: translate(-3px, 3px);
     }
 
     50% {
+        transform: translateY(-25px);
         opacity: 0;
-        width: 0px;
-        height: 0px;
-        transform: translate(5px, -5px);
+        height: 0;
     }
 
     75% {
-        opacity: 0.6;
-        width: 10px;
+        transform: translateY(10px);
+        opacity: 0.5;
         height: 10px;
-        transform: translate(-3px, 3px);
     }
 
     100% {
+        transform: translateY(0);
         opacity: 1;
-        width: 20px;
         height: 20px;
-        transform: translate(0, 0);
     }
 }
 
