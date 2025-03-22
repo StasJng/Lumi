@@ -76,6 +76,13 @@ section {
     max-width: 1792px;
 }
 
+img[lazy] {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    vertical-align: middle;
+}
+
 /* #endregion */
 
 /* #region General button */
@@ -324,6 +331,9 @@ section {
     padding: 0 0 0 0;
     max-width: unset;
     width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    min-height: 350px;
 }
 
 .hero__container {
@@ -331,9 +341,11 @@ section {
     margin: 0 auto;
 }
 
-.hero__image {
+.hero__slide img {
     width: 100%;
     height: auto;
+    aspect-ratio: auto;
+    object-fit: cover;
 }
 
 /* #endregion */
@@ -361,6 +373,7 @@ section {
     font-size: 25px;
     font-weight: 500;
     margin-bottom: 32px;
+    line-height: 135%;
 }
 
 /* #endregion */
