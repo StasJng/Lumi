@@ -176,7 +176,15 @@ section[class="hero"] {
 /* #endregion */
 
 /* #region Section's title */
-.section-title {
+.section__title {
+    font-size: 49px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__sub-title {
     color: #008C4F;
     font-weight: 600;
     font-size: 13px;
@@ -184,9 +192,12 @@ section[class="hero"] {
     height: 18px;
     line-height: 18px;
     user-select: none;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
 }
 
-.section-title img {
+.section__sub-title img {
     height: 16px;
     width: 16px;
     margin-right: 8px;
@@ -266,7 +277,10 @@ section[class="hero"] {
 /* #endregion */
 
 /* #region Hero Section */
-.hero {}
+.hero {
+    max-width: unset;
+    width: 100%;
+}
 
 .hero__container {
     position: relative;
@@ -408,7 +422,6 @@ section[class="hero"] {
 .introduction__right {}
 
 .introduction__title {
-    color: #090909;
     font-size: 30px;
     font-weight: 700;
     line-height: 41px;
@@ -492,20 +505,12 @@ section[class="hero"] {
     padding: 88px 64px;
 }
 
-.solutions__title {
-    font-size: 49px;
-    font-weight: 700;
-    height: 66px;
-    line-height: 66px;
-    flex-direction: column;
-    margin-bottom: 40px;
-}
-
 .solutions__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-bottom: 48px;
+    margin-top: 40px;
 }
 
 .solutions__card {
@@ -545,9 +550,184 @@ section[class="hero"] {
 /* #endregion */
 
 /* #region Projects Section */
+.projects {
+    margin: 88px auto;
+}
+
+.projects__content {
+    margin-bottom: 48px;
+    margin-top: 40px;
+}
+
+.projects__item {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 0.38fr 0.43fr 0.19fr;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 64px;
+}
+
+.projects__item:last-of-type {
+    margin-bottom: 0;
+}
+
+.projects__info {
+    position: relative;
+}
+
+.projects__info-title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.projects__desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: #7F7F80;
+    bottom: 0;
+    position: absolute;
+}
+
+.projects__img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.projects__solutions {
+    position: relative;
+}
+
+.projects__info-items {
+    bottom: 0;
+    position: absolute;
+}
+
+.projects__info-items div {
+    color: #7F7F80;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid #BCB9C0;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+.projects__info-items div:last-of-type {
+    margin-bottom: 0px;
+}
+
 /* #endregion */
 
 /* #region Products Section */
+.products {
+    background-color: #f5f5f5;
+    padding: 0 0 0 0 !important;
+}
+
+.products__ctn {
+    padding: 88px 64px;
+}
+
+.products__categories {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products__category {
+    width: fit-content;
+    border-radius: 50px;
+    overflow: hidden;
+    color: #7F7F80;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 13px 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.products__category:hover {
+    opacity: 0.8;
+    background-color: #008C4F;
+    color: #fff;
+}
+
+.products__category:last-of-type {
+    margin-right: 0;
+}
+
+.products__category.selected {
+    background-color: #008C4F;
+    color: #fff;
+}
+
+.products__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 48px;
+}
+
+.products__item {
+    padding: 24px;
+    border-radius: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.products__item:hover {
+    opacity: 0.8;
+}
+
+.products__item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 32px;
+}
+
+.products__name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.products__desc {
+    color: #7F7F80;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.products__name,
+.products__desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.products__price {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 /* #endregion */
 
 /* #region Contacts Section */
