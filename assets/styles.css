@@ -1950,6 +1950,12 @@ img[lazy] {
     }
 }
 
+@media (min-width: 1200px) {
+    .hero__slide img {
+        min-height: 400px;
+    }
+}
+
 @media (max-width: 1439.98px) {
     section {
         padding: 64px 64px;
