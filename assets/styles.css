@@ -7,7 +7,7 @@
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Inter';
     src: url('./fonts/Inter_Medium.woff2') format('woff2');
     font-weight: 500;
@@ -21,7 +21,7 @@
     font-weight: 600;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 * {
     margin: 0;
@@ -1578,7 +1578,7 @@ img[lazy] {
     top: 50%;
     left: 50%;
     width: 20px;
-    height: 3px;
+    height: 2px;
     background-color: #fff;
     transform: translate(-50%, -50%);
     transition: transform 0.3s ease;
@@ -2292,19 +2292,20 @@ img[lazy] {
     }
 }
 
-@media (max-width: 465px) {
-    .about__txt {
-        min-width: 425px;
-    }
-}
-
 /* @media (max-width: 767.98px) {
     section {}
 
 }
+    
 
 @media (max-width: 575.98px) {
     section {}
 } */
+
+@media (max-width: 576px) {
+    .about__txt {
+        min-width: 300px;
+    }
+}
 
 /* #endregion */

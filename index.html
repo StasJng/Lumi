@@ -14,8 +14,32 @@
     <script src="assets/swiper/swiper.min.js" defer></script>
     <script src="assets/script.js" defer></script>
     <link rel="preload" href="assets/fonts/Inter_Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/Inter_Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/Inter_SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <script defer>
+        // Load additional font weights after DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to dynamically load font weights
+            const loadFont = (family, weight, url) => {
+                const font = new FontFace(family, `url(${url})`, {
+                    weight: weight,
+                    display: 'swap'
+                });
+
+                return font.load().then(() => {
+                    document.fonts.add(font);
+                }).catch(err => console.log(`Font loading failed: ${err}`));
+            };
+
+            // Load additional weights (e.g., bold and italic)
+            Promise.all([
+                loadFont('Inter', '500', 'assets/fonts/Inter_Medium.woff2'),
+                loadFont('Inter', '600', 'assets/fonts/Inter_SemiBold.woff2')
+                // Add more weights/styles as needed
+            ]).then(() => {
+                //console.log('Additional font weights loaded');
+            });
+        });
+    </script>
 </head>
 
 <body>
