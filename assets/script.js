@@ -9,27 +9,48 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true
         }
     });
+
+    let choiceSwiper = new Swiper('.choice .swiper-container',
+        {
+            slidesPerView: 3,
+            spaceBetween: 32,
+            loop: false,
+            // breakpoints:
+            // {
+            //     768: {
+            //         slidesPerView: 1.1,
+            //         spaceBetween: 5,
+            //     },
+            //     992: {
+            //         slidesPerView: 1.5,
+            //         spaceBetween: 5,
+            //     },
+            //     1200: {
+            //         slidesPerView: 2.5,
+            //         spaceBetween: 5,
+            //     }
+            // },
+            pagination: {
+                el: '.choice .swiper-pagination',
+                clickable: true
+            },
+            // Navigation buttons
+            navigation: {
+                nextEl: '.choice .swiper-button-next',
+                prevEl: '.choice .swiper-button-prev',
+            },
+
+            // Optional extras
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: true,
+            // },
+
+            speed: 800,
+            //grabCursor: true,
+            //centeredSlides: false,
+            //effect: 'slide',
+        })
 });
 
 
-// let categorySwiper = new Swiper('.category-reg .swiper-container',
-//     {
-//         slidesPerView: 3,
-//         spaceBetween: 5,
-//         loop: !1,
-//         breakpoints:
-//         {
-//             768: {
-//                 slidesPerView: 1.1,
-//                 spaceBetween: 5,
-//             },
-//             992: {
-//                 slidesPerView: 1.5,
-//                 spaceBetween: 5,
-//             },
-//             1200: {
-//                 slidesPerView: 2.5,
-//                 spaceBetween: 5,
-//             }
-//         }
-//     })
