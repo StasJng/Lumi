@@ -172,7 +172,9 @@ img[lazy] {
     width: 24px !important;
     height: 24px !important;
     position: absolute !important;
-    right: 10px;
+    left: unset !important;
+    right: 10px !important;
+    top: 10px !important;
     transition: transform 0.4s ease-out;
 }
 
@@ -1174,6 +1176,7 @@ img[lazy] {
     height: 120px;
     width: 250px;
     filter: grayscale(1);
+    user-select: none;
 }
 
 .partners__carousel img:hover {
@@ -1584,8 +1587,15 @@ img[lazy] {
     background: #121212;
     padding: 48px 64px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(5, max-content);
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer__middle>div {
+    max-width: 380px;
 }
 
 .footer__contact {}
@@ -1598,7 +1608,7 @@ img[lazy] {
 }
 
 .footer__region {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
 .footer__region:last-of-type {
