@@ -173,7 +173,94 @@
         <section class="introduction">
             <div class="introduction__content">
                 <div class="introduction__left fade-in" data-direction="left">
-                    <img src="" data-src="assets/images/img-about.webp" alt="" height="500" width="500" lazy>
+                    <div class="introduction__left-video" video-src="assets/lab.mp4">
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                const videoContainers = document.querySelectorAll(".introduction__left-video");
+                                const observerOptions = {
+                                    root: null, // Use viewport as root
+                                    rootMargin: "0px", // No margin
+                                    threshold: 0.1, // Trigger when 10% of the container is visible
+                                };
+
+                                // Track if user has interacted with the page
+                                let hasInteracted = false;
+                                const setInteracted = () => (hasInteracted = true);
+                                window.addEventListener("click", setInteracted, { once: true });
+                                window.addEventListener("scroll", setInteracted, { once: true });
+
+                                function setupVideo(container) {
+                                    const videoSrc = container.getAttribute("video-src");
+                                    if (!videoSrc) {
+                                        console.warn("No video-src found for container:", container);
+                                        return;
+                                    }
+
+                                    // Create and configure video element
+                                    const videoElement = document.createElement("video");
+                                    videoElement.src = videoSrc;
+                                    videoElement.playsInline = true; // Use property for consistency
+                                    videoElement.muted = true; // Required for reliable autoplay
+                                    videoElement.loop = true;
+                                    videoElement.style.pointerEvents = "none"; // Prevent interaction
+                                    videoElement.preload = "metadata"; // Preload metadata for faster start
+
+                                    // Clear container and append video
+                                    container.innerHTML = "";
+                                    container.appendChild(videoElement);
+
+                                    // Attempt to play the video
+                                    const playVideo = () => {
+                                        const playPromise = videoElement.play();
+                                        if (playPromise) {
+                                            playPromise.catch((error) => {
+                                                console.warn("Autoplay blocked:", error);
+                                                // Fallback: Show a play button if autoplay fails and no interaction
+                                                if (!hasInteracted) {
+                                                    const playButton = document.createElement("button");
+                                                    playButton.textContent = "▶ Play Video";
+                                                    playButton.style.position = "absolute";
+                                                    playButton.style.top = "50%";
+                                                    playButton.style.left = "50%";
+                                                    playButton.style.transform = "translate(-50%, -50%)";
+                                                    container.appendChild(playButton);
+                                                    playButton.addEventListener("click", () => {
+                                                        videoElement.play();
+                                                        playButton.remove();
+                                                    });
+                                                }
+                                            });
+                                        }
+                                    };
+
+                                    // Play when video metadata is loaded or immediately if already loaded
+                                    if (videoElement.readyState >= 1) {
+                                        playVideo();
+                                    } else {
+                                        videoElement.addEventListener("loadedmetadata", playVideo, { once: true });
+                                    }
+
+                                    // Handle video loading errors
+                                    videoElement.addEventListener("error", () => {
+                                        console.error("Failed to load video:", videoSrc);
+                                        container.innerHTML = "<p>⚠️ Video failed to load.</p>";
+                                    });
+                                }
+
+                                const observer = new IntersectionObserver((entries, observer) => {
+                                    entries.forEach((entry) => {
+                                        if (entry.isIntersecting) {
+                                            setupVideo(entry.target);
+                                            observer.unobserve(entry.target); // Stop observing once loaded
+                                        }
+                                    });
+                                }, observerOptions);
+
+                                videoContainers.forEach((container) => observer.observe(container));
+                            });
+                        </script>
+                    </div>
+
                     <div class="glass-box">
                         <div class="glass-box__head">
                             Chúng tôi giúp bạn biến không gian sống trở nên thông minh và hài hòa
@@ -300,45 +387,57 @@
 
                 <div class="solutions__content fade-in" data-direction="bottom">
                     <a class="solutions__card" href="#">
-                        <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng" height="200"
-                            width="300" lazy />
+                        <div class="solutions__card-img">
+                            <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng"
+                                height="200" width="300" lazy />
+                        </div>
                         <h3 class="solutions__card-title">Chiếu sáng thông minh</h3>
                         <p class="solutions__card-description">Tối ưu hóa ánh sáng cho mọi không gian sống. Lorem ipsum
                             dolor sit amet.</p>
                     </a>
                     <a class="solutions__card" href="#">
-                        <img src="" data-src="assets/images/img-solution.jpg" alt="Điều hòa thông minh" height="200"
-                            width="300" lazy />
+                        <div class="solutions__card-img">
+                            <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng"
+                                height="200" width="300" lazy />
+                        </div>
                         <h3 class="solutions__card-title">Điều hòa thông minh</h3>
                         <p class="solutions__card-description">Kiểm soát nhiệt độ từ xa một cách dễ dàng. Lorem ipsum
                             dolor
                             sit amet.</p>
                     </a>
                     <a class="solutions__card" href="#">
-                        <img src="" data-src="assets/images/img-solution.jpg" alt="Bảo mật thông minh" height="200"
-                            width="300" lazy />
+                        <div class="solutions__card-img">
+                            <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng"
+                                height="200" width="300" lazy />
+                        </div>
                         <h3 class="solutions__card-title">Bảo mật thông minh</h3>
                         <p class="solutions__card-description">Bảo vệ ngôi nhà của bạn 24/7. Lorem ipsum dolor sit amet.
                         </p>
                     </a>
                     <a class="solutions__card" href="#">
-                        <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng" height="200"
-                            width="300" lazy />
+                        <div class="solutions__card-img">
+                            <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng"
+                                height="200" width="300" lazy />
+                        </div>
                         <h3 class="solutions__card-title">Chiếu sáng thông minh</h3>
                         <p class="solutions__card-description">Tối ưu hóa ánh sáng cho mọi không gian sống. Lorem ipsum
                             dolor sit amet.</p>
                     </a>
                     <a class="solutions__card" href="#">
-                        <img src="" data-src="assets/images/img-solution.jpg" alt="Điều hòa thông minh" height="200"
-                            width="300" lazy />
+                        <div class="solutions__card-img">
+                            <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng"
+                                height="200" width="300" lazy />
+                        </div>
                         <h3 class="solutions__card-title">Điều hòa thông minh</h3>
                         <p class="solutions__card-description">Kiểm soát nhiệt độ từ xa một cách dễ dàng. Lorem ipsum
                             dolor
                             sit amet.</p>
                     </a>
                     <a class="solutions__card" href="#">
-                        <img src="" data-src="assets/images/img-solution.jpg" alt="Bảo mật thông minh" height="200"
-                            width="300" lazy />
+                        <div class="solutions__card-img">
+                            <img src="" data-src="assets/images/img-solution.jpg" alt="Giải pháp chiếu sáng"
+                                height="200" width="300" lazy />
+                        </div>
                         <h3 class="solutions__card-title">Bảo mật thông minh</h3>
                         <p class="solutions__card-description">Bảo vệ ngôi nhà của bạn 24/7. Lorem ipsum dolor sit amet.
                         </p>

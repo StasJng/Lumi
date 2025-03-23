@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 prevEl: '.choice .swiper-button-prev',
             },
 
-            // Optional extras
-            // autoplay: {
-            //     delay: 3000,
-            //     disableOnInteraction: true,
-            // },
+            //Optional extras
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: true,
+            },
 
             speed: 800,
             //grabCursor: true,
