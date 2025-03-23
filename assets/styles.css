@@ -258,6 +258,7 @@ img[lazy] {
     height: 88px;
     align-content: center;
     z-index: 1000;
+    user-select: none;
 }
 
 .header__container {
@@ -335,6 +336,11 @@ img[lazy] {
 }
 
 .header__nav-link:hover {
+    color: #008C4F;
+}
+
+.header__nav-link.selected:hover {
+    color: #fff;
     opacity: 0.8;
 }
 
