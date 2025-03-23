@@ -15,21 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 3,
             spaceBetween: 32,
             loop: false,
-            // breakpoints:
-            // {
-            //     768: {
-            //         slidesPerView: 1.1,
-            //         spaceBetween: 5,
-            //     },
-            //     992: {
-            //         slidesPerView: 1.5,
-            //         spaceBetween: 5,
-            //     },
-            //     1200: {
-            //         slidesPerView: 2.5,
-            //         spaceBetween: 5,
-            //     }
-            // },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                992: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                }
+            },
             pagination: {
                 el: '.choice .swiper-pagination',
                 clickable: true
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //grabCursor: true,
             //centeredSlides: false,
             //effect: 'slide',
-        })
+        });
 });
 
 

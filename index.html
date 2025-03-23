@@ -103,7 +103,7 @@
 
         <section class="about">
             <div class="about__container">
-                <div class="section__sub-title fade-in" data-direction="left">
+                <div class="section__sub-title fade-in" data-direction="bottom">
                     <img lazy src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         data-src="
                         assets/images/icons/ico-green-pin.svg" alt="" height="20" width="20">
@@ -1443,7 +1443,6 @@
     <script>
         const projects = document.querySelectorAll('.projects__item');
         const totalItems = projects.length;
-
         const projectsObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 projects.forEach(item => {
@@ -1475,11 +1474,12 @@
 
                     // Special handling for the last item
                     if (i === totalItems - 1 && i === topmostIndex) {
-                        item.style.height = `${400 + (totalItems - 1) * 20}px`; // Cover all previous items
+                        item.style.height = "max-content";
                         item.style.top = '80px'; // Align with the first item's top
                         item.style.zIndex = totalItems + 1; // Ensure it’s on top
                     } else {
-                        item.style.height = '400px'; // Default height
+
+                        item.style.height = "max-content";
                         item.style.top = `${80 + (i * 20)}px`; // Default staggered top
                     }
                 } else {
@@ -1487,7 +1487,7 @@
                     const opacity = 1 - (topmostIndex - i) * 0.2;
                     item.style.transform = `scale(${scale})`;
                     item.style.opacity = opacity;
-                    item.style.height = '400px';
+                    item.style.height = "max-content";
                     item.style.top = `${80 + (i * 20)}px`;
                 }
             });
