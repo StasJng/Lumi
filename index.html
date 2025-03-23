@@ -14,32 +14,8 @@
     <script src="assets/swiper/swiper.min.js" defer></script>
     <script src="assets/script.js" defer></script>
     <link rel="preload" href="assets/fonts/Inter_Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <script defer>
-        // Load additional font weights after DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            // Function to dynamically load font weights
-            const loadFont = (family, weight, url) => {
-                const font = new FontFace(family, `url(${url})`, {
-                    weight: weight,
-                    display: 'swap'
-                });
-
-                return font.load().then(() => {
-                    document.fonts.add(font);
-                }).catch(err => console.log(`Font loading failed: ${err}`));
-            };
-
-            // Load additional weights (e.g., bold and italic)
-            Promise.all([
-                loadFont('Inter', '500', 'assets/fonts/Inter_Medium.woff2'),
-                loadFont('Inter', '600', 'assets/fonts/Inter_SemiBold.woff2')
-                // Add more weights/styles as needed
-            ]).then(() => {
-                //console.log('Additional font weights loaded');
-            });
-        });
-    </script>
+    <link rel="preload" href="assets/fonts/Inter_Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Inter_SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
@@ -127,46 +103,21 @@
 
         <section class="about">
             <div class="about__container">
-                <div class="section__sub-title fade-in" data-direction="bottom">
+                <div class="section__sub-title">
                     <img lazy src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         data-src="
                         assets/images/icons/ico-green-pin.svg" alt="" height="20" width="20">
                     về lumi
                 </div>
-                <div class="about__content fade-in" data-direction="right">
-                    <div class="about__txt" data-content="Lumi – tiên phong mang công nghệ nhà thông minh đến mọi gia đình Việt Nam
-                    từ năm 2012. Với sứ mệnh biến ngôi nhà của bạn thành không gian sống tiện nghi, an toàn và tiết
-                    kiệm năng lượng, chúng tôi tự hào thiết kế và sản xuất các giải pháp thông minh phù hợp với
-                    người Việt. Đạt chuẩn quốc tế CE và có mặt tại 9 quốc gia, Lumi không chỉ là sản phẩm, mà là đối
-                    tác đồng hành cùng bạn trên hành trình sống hiện đại."></div>
+                <div class="about__content">
+                    <div class="about__txt">
+                        Lumi – tiên phong mang công nghệ nhà thông minh đến mọi gia
+                        đình Việt Nam từ năm 2012. Với sứ mệnh biến ngôi nhà của bạn thành không gian sống tiện nghi, an
+                        toàn và tiết kiệm năng lượng, chúng tôi tự hào thiết kế và sản xuất các giải pháp thông minh phù
+                        hợp với người Việt. Đạt chuẩn quốc tế CE và có mặt tại 9 quốc gia, Lumi không chỉ là sản phẩm,
+                        mà là đối tác đồng hành cùng bạn trên hành trình sống hiện đại.
+                    </div>
 
-                    <script>
-                        // Wait for DOM to be fully loaded
-                        document.addEventListener('DOMContentLoaded', () => {
-                            const target = document.querySelector('.about__txt');
-
-                            // Create Intersection Observer
-                            const observer = new IntersectionObserver((entries, observer) => {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) {
-                                        // Fill content when element is in viewport
-                                        const content = target.getAttribute('data-content');
-                                        target.textContent = content;
-                                        target.classList.add('visible');
-                                        // Stop observing after content is loaded
-                                        observer.unobserve(target);
-                                    }
-                                });
-                            }, {
-                                root: null, // Use viewport as root
-                                rootMargin: '0px', // Trigger when element enters viewport
-                                threshold: 0.1 // Trigger when 10% of element is visible
-                            });
-
-                            // Start observing the target element
-                            observer.observe(target);
-                        });
-                    </script>
                     <div class="general__btn">
                         <p>Xem thêm</p>
                         <span>
