@@ -1499,26 +1499,28 @@
 
     <!-- Lazy loading -->
     <script>
-        // Select all images with the 'lazy'
-        const lazyImages = document.querySelectorAll('img[lazy]');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all images with the 'lazy'
+            const lazyImages = document.querySelectorAll('img[lazy]');
 
-        // Configure the Intersection Observer
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('lazy');
-                    img.removeAttribute('data-src');
-                    observer.unobserve(img);
-                }
+            // Configure the Intersection Observer
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('lazy');
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                threshold: 0.01 // Trigger when 1% of the image is visible
             });
-        }, {
-            threshold: 0.01 // Trigger when 1% of the image is visible
-        });
 
-        // Observe each lazy image
-        lazyImages.forEach(img => imageObserver.observe(img));
+            // Observe each lazy image
+            lazyImages.forEach(img => imageObserver.observe(img));
+        });
     </script>
 </body>
 
