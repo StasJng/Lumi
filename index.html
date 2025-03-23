@@ -110,11 +110,39 @@
                     về lumi
                 </div>
                 <div class="about__content fade-in" data-direction="right">
-                    <div class="about__txt">Lumi – tiên phong mang công nghệ nhà thông minh đến mọi gia đình Việt Nam
-                        từ năm 2012. Với sứ mệnh biến ngôi nhà của bạn thành không gian sống tiện nghi, an toàn và tiết
-                        kiệm năng lượng, chúng tôi tự hào thiết kế và sản xuất các giải pháp thông minh phù hợp với
-                        người Việt. Đạt chuẩn quốc tế CE và có mặt tại 9 quốc gia, Lumi không chỉ là sản phẩm, mà là đối
-                        tác đồng hành cùng bạn trên hành trình sống hiện đại.</div>
+                    <div class="about__txt" data-content="Lumi – tiên phong mang công nghệ nhà thông minh đến mọi gia đình Việt Nam
+                    từ năm 2012. Với sứ mệnh biến ngôi nhà của bạn thành không gian sống tiện nghi, an toàn và tiết
+                    kiệm năng lượng, chúng tôi tự hào thiết kế và sản xuất các giải pháp thông minh phù hợp với
+                    người Việt. Đạt chuẩn quốc tế CE và có mặt tại 9 quốc gia, Lumi không chỉ là sản phẩm, mà là đối
+                    tác đồng hành cùng bạn trên hành trình sống hiện đại."></div>
+
+                    <script>
+                        // Wait for DOM to be fully loaded
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const target = document.querySelector('.about__txt');
+
+                            // Create Intersection Observer
+                            const observer = new IntersectionObserver((entries, observer) => {
+                                entries.forEach(entry => {
+                                    if (entry.isIntersecting) {
+                                        // Fill content when element is in viewport
+                                        const content = target.getAttribute('data-content');
+                                        target.textContent = content;
+                                        target.classList.add('visible');
+                                        // Stop observing after content is loaded
+                                        observer.unobserve(target);
+                                    }
+                                });
+                            }, {
+                                root: null, // Use viewport as root
+                                rootMargin: '0px', // Trigger when element enters viewport
+                                threshold: 0.1 // Trigger when 10% of element is visible
+                            });
+
+                            // Start observing the target element
+                            observer.observe(target);
+                        });
+                    </script>
                     <div class="general__btn">
                         <p>Xem thêm</p>
                         <span>

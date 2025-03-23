@@ -406,6 +406,7 @@ img[lazy] {
     font-weight: 500;
     margin-bottom: 32px;
     line-height: 135%;
+    min-height: 135px;
 }
 
 /* Base style for each line span */
