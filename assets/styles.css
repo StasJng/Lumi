@@ -2008,6 +2008,14 @@ img[lazy] {
     background-color: #008C4F;
 }
 
+.choice .swiper-button-prev::after {
+    margin-left: 5px;
+}
+
+.choice .swiper-button-next::after {
+    margin-right: 5px;
+}
+
 .choice .swiper-button-prev:hover::after,
 .choice .swiper-button-next:hover::after {
     border-color: #fff;
