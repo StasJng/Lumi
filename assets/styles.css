@@ -774,6 +774,43 @@ img[lazy] {
 .projects__img {
     width: 100%;
     height: 100%;
+    position: relative;
+}
+
+.projects__item:hover .projects__img .general__btn {
+    bottom: 24px;
+    width: 230px;
+    max-width: max-content;
+    opacity: 1;
+}
+
+.projects__item:hover .projects__img .general__btn:hover p {
+    color: #fff;
+}
+
+.projects__img .general__btn {
+    position: absolute;
+    position: absolute;
+    bottom: -100px;
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+
+.projects__img .general__btn p {
+    color: #008C4F;
+}
+
+.projects__img .general__btn span {
+    background-color: #008C4F;
+}
+
+.projects__img img {
+    width: 100%;
+    height: 100%;
     aspect-ratio: 7.3 / 4.5;
     object-fit: cover;
     border-radius: 8px;
@@ -1921,7 +1958,7 @@ img[lazy] {
     width: 32px;
     height: 4px;
     border-radius: 4px;
-    background: #E2E1E3;
+    background: #bbb9c0;
 }
 
 /* Choice swiper */
@@ -1998,7 +2035,7 @@ img[lazy] {
     width: 32px;
     height: 4px;
     border-radius: 4px;
-    background: #E2E1E3;
+    background: #bbb9c0;
 }
 
 /* #endregion */
@@ -2183,7 +2220,7 @@ img[lazy] {
         -webkit-line-clamp: 2;
     }
 
-    .projects__img {
+    .projects__img img {
         width: 100%;
         height: 190px;
         aspect-ratio: auto;
