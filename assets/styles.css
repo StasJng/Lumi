@@ -26,7 +26,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', Segoe UI, Arial, Helvetica, Verdana, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -40,6 +40,12 @@ body {
     position: relative;
     color: #090909;
 }
+
+/* main {
+    display: flex;
+    flex-direction: column;
+    gap: 176px;
+} */
 
 a {
     color: unset;
@@ -239,6 +245,7 @@ img[lazy] {
     align-items: center;
     vertical-align: middle;
     width: fit-content;
+    margin-bottom: 8px;
 }
 
 .section__sub-title img {
@@ -476,7 +483,7 @@ img[lazy] {
 
 /* #region Introduction Section*/
 .introduction {
-    margin: 88px auto;
+    margin: 176px auto 88px auto;
 }
 
 .introduction__content {
@@ -699,7 +706,7 @@ img[lazy] {
 
 /* #region Projects Section */
 .projects {
-    margin: 88px auto;
+    margin: 88px auto
 }
 
 .projects__content {
@@ -720,6 +727,7 @@ img[lazy] {
     position: sticky;
     top: 100px;
     transition: all 0.3s;
+    min-height: max-content;
 }
 
 .projects__item:nth-of-type(1) {
@@ -903,7 +911,7 @@ img[lazy] {
 
 /* #region Contacts Section */
 .contact {
-    margin: 88px auto;
+    margin: 88px auto 176px auto;
 }
 
 .contact__content {
@@ -916,47 +924,91 @@ img[lazy] {
     position: relative;
 }
 
-.contact__slides {
-    display: grid;
-    grid-template-columns: 0.2fr 0.6fr 0.2fr;
-    gap: 24px 20px;
-    background: transparent;
-    border-radius: 8px;
+/* #start region carousel */
+.contact__carousel {
+    position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    position: relative;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-    user-select: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    height: 706px;
 }
 
-.contact__slide {
+.contact__slides {
     position: relative;
-    top: 0;
-    left: -75%;
-    top: -300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 24px;
+    box-sizing: border-box;
+    left: -20%;
 }
 
 .contact__slide:nth-of-type(2n) {
-    top: -100px;
+    animation: scroll__down 60s linear infinite;
+    /* animation-delay: 0.2s; */
 }
 
-.contact__slide img {
+.contact__slide {
+    display: grid;
+    grid-auto-columns: 1fr;
+    margin: 0 auto;
+    height: calc(400px * 6);
+    animation: scroll__up 60s linear infinite;
+}
+
+/* Animation for infinite scrolling */
+@keyframes scroll__up {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(-400px * 3));
+    }
+}
+
+@keyframes scroll__down {
+    0% {
+        transform: translateY(calc(-400px * 3));
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Image styling and positioning */
+.contact__img {
     width: 400px;
-    overflow: hidden;
-    height: auto;
-    border-radius: 8px;
-    margin: 12px 0;
+    height: 400px;
+    aspect-ratio: 1;
+    position: relative;
+    object-fit: cover;
+    user-select: none;
+
+    background-color: transparent;
+}
+
+.contact__img img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 400px;
+    width: 400px;
     aspect-ratio: 1;
     object-fit: cover;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 20px;
 }
+
+/* #endregion carousel */
 
 .contact__form {
     background-color: #fff;
     padding: 24px;
     border-radius: 8px;
+    height: fit-content;
 }
 
 .contact__title {
@@ -1071,7 +1123,7 @@ img[lazy] {
 
 /* #region Reviews Section */
 .reviews {
-    margin: 88px auto;
+    margin: 176px auto;
     padding: 0 0 0 0;
     max-width: unset;
 }
@@ -1161,7 +1213,7 @@ img[lazy] {
 
 /* #region Prizes Section */
 .prizes {
-    margin: 88px auto;
+    margin: 176px auto;
 }
 
 .prizes__ctn {
@@ -1211,7 +1263,7 @@ img[lazy] {
 
 /* #region Partners Section */
 .partners {
-    margin: 88px auto;
+    margin: 176px auto;
     padding: 0 0 0 0;
     max-width: unset;
 }
@@ -1734,6 +1786,17 @@ img[lazy] {
     padding: 48px 64px;
     border-radius: 0px 0px 16px 16px;
     background: #090909;
+}
+
+.footer__bottom> :nth-child(2),
+.footer__bottom> :nth-child(3) {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    text-align: center;
+    /* Ensure text is centered too */
 }
 
 .footer__copyright {

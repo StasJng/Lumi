@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Carousel</title>
+    <style>
+        .contact__content {
+            width: 908px;
+            height: 754px;
+            overflow: hidden;
+            background-color: #000;
+            border: 24px solid #000;
+            box-sizing: border-box;
+            border-radius: 16px;
+        }
+
+        .contact__carousel {
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .contact__slides {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 24px;
+            box-sizing: border-box;
+            left: -20%;
+        }
+
+        .contact__slide:nth-of-type(2n) {
+            animation: scroll__down 60s linear infinite;
+            /* animation-delay: 0.2s; */
+        }
+
+        .contact__slide {
+            display: grid;
+            grid-auto-columns: 1fr;
+            margin: 0 auto;
+            height: calc(400px * 6);
+            animation: scroll__up 60s linear infinite;
+        }
+
+        /* Animation for infinite scrolling */
+        @keyframes scroll__up {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(-400px * 3));
+            }
+        }
+
+        @keyframes scroll__down {
+            0% {
+                transform: translateY(calc(-400px * 3));
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Image styling and positioning */
+        .contact__img {
+            width: 400px;
+            height: 400px;
+            aspect-ratio: 1;
+            position: relative;
+            object-fit: cover;
+            user-select: none;
+
+            background-color: transparent;
+        }
+
+        .contact__img img {
+            max-width: 100%;
+            max-height: 100%;
+            height: 400px;
+            width: 400px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            box-sizing: border-box;
+            padding: 12px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact__content">
+        <div class="contact__carousel">
+            <div class="contact__slides">
+                <div class="contact__slide">
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                </div>
+                <div class="contact__slide">
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                </div>
+                <div class="contact__slide">
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                    <div class="contact__img"><img src="assets/images/img-project.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
