@@ -1936,6 +1936,26 @@ img[lazy] {
     transform: translate(0, 0);
 }
 
+@media (pointer: coarse) and (max-width: 1200px) {
+    .fade-in {
+        transform: none !important;
+    }
+}
+
+@media (pointer: fine) and (max-width: 1024px) {
+    .button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+main {
+    overflow: clip;
+    /* display: flex;
+    flex-direction: column;
+    gap: 176px; */
+}
+
 /* #endregion */
 
 /* #region Swiper */
@@ -2092,8 +2112,6 @@ img[lazy] {
 }
 
 @media (max-width: 1199.98px) {
-    section {}
-
     .about {
         margin: 64px auto 80px auto;
     }
